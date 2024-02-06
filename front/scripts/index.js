@@ -30,8 +30,8 @@ function addMovie({
   mgenre.textContent = genre.join(", ");
   mrate.textContent = `${rate} :star:`;
   moviecart.className = "moviescarts";
-    imgcart.className = "imgcontent";
-    infomovie.className= "infocontent"
+  imgcart.className = "imgcontent";
+  infomovie.className = "infocontent";
 
   infomovie.appendChild(myear);
   infomovie.appendChild(mdirector);
