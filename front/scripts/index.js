@@ -23,12 +23,12 @@ function addMovie({
   const mrate = document.createElement("p");
 
   mtitle.textContent = title;
-  myear.textContent = year;
-  mdirector.innerHTML = director;
+  myear.textContent = `Año: ${year}`;
+  mdirector.innerHTML = `Director ${director}`;
   mimagenpeli.src = poster;
-  mduration.textContent = duration;
-  mgenre.textContent = genre.join(", ");
-  mrate.textContent = `${rate} :star:`;
+  mduration.textContent = `Duracion: ${duration}`;
+  mgenre.textContent = `Genero: ${genre.join(", ")}`;
+  mrate.textContent = `valoracion: ${rate} :star:`;
   moviecart.className = "moviescarts";
   imgcart.className = "imgcontent";
   infomovie.className = "infocontent";
@@ -48,12 +48,24 @@ function addMovie({
   return moviecart;
 }
 
-const arraymovies = tempData.map((pelicula) => addMovie(pelicula));
+/*const arraymovies = tempData.map((pelicula) => addMovie(pelicula));*/
 
-arraymovies.forEach((element) => {
-  principalContent.appendChild(element);
-});
-
-function renderMovies(listamovies) {
-  principalContent.appendChild(listamovies);
+function renderMovies() {
+  $.get("https://students-api.2.us-1.fl0.io/movies", (movies, state) => {
+    const arraymovies = movies.map((pelicula) => addMovie(pelicula));
+    arraymovies.forEach((element) => {
+      principalContent.appendChild(element);
+    });
+    console.log(state);
+    console.log(state);
+  });
 }
+
+/*function renderMovies() {
+  const arraymovies = tempData.map((pelicula) => addMovie(pelicula));
+  arraymovies.forEach((element) => {
+    principalContent.appendChild(element);
+  });
+}*/
+
+window.addEventListener("DOMContentLoaded", renderMovies);
