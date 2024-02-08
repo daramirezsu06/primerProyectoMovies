@@ -1,5 +1,3 @@
-console.log(tempData);
-
 const principalContent = document.getElementById("moviesConten");
 
 function addMovie({
@@ -12,9 +10,9 @@ function addMovie({
   poster,
 }) {
   const moviecart = document.createElement("div");
+  const contentonecart = document.createElement("div");
   const infomovie = document.createElement("div");
-  const imgcart = document.createElement("div");
-  const mtitle = document.createElement("h1");
+  const mtitle = document.createElement("h4");
   const myear = document.createElement("p");
   const mimagenpeli = document.createElement("img");
   const mdirector = document.createElement("p");
@@ -30,22 +28,27 @@ function addMovie({
   mgenre.textContent = `Genero: ${genre.join(", ")}`;
   mrate.textContent = `valoracion: ${rate} :star:`;
   moviecart.className = "moviescarts";
-  imgcart.className = "imgcontent";
   infomovie.className = "infocontent";
+  moviecart.classList.add();
+  moviecart.classList.add("card");
+  mimagenpeli.classList.add("card-img-top");
+  infomovie.classList.add("card-body");
+  mtitle.classList.add("card-title");
+  contentonecart.classList.add("col-sm");
 
+  infomovie.appendChild(mtitle);
   infomovie.appendChild(myear);
   infomovie.appendChild(mdirector);
   infomovie.appendChild(mduration);
   infomovie.appendChild(mgenre);
   infomovie.appendChild(mrate);
 
-  imgcart.appendChild(mimagenpeli);
-
-  moviecart.appendChild(mtitle);
-  moviecart.appendChild(imgcart);
+  
+  moviecart.appendChild(mimagenpeli);
   moviecart.appendChild(infomovie);
+  contentonecart.appendChild(moviecart);
 
-  return moviecart;
+  return contentonecart;
 }
 
 /*const arraymovies = tempData.map((pelicula) => addMovie(pelicula));*/
@@ -61,6 +64,8 @@ function renderMovies() {
   });
 }
 
+renderMovies();
+
 /*function renderMovies() {
   const arraymovies = tempData.map((pelicula) => addMovie(pelicula));
   arraymovies.forEach((element) => {
@@ -68,4 +73,4 @@ function renderMovies() {
   });
 }*/
 
-window.addEventListener("DOMContentLoaded", renderMovies);
+/*window.addEventListener("DOMContentLoaded", renderMovies);*/

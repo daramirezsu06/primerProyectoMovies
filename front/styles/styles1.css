@@ -1,0 +1,13 @@
+footer article {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer img {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.moviescarts {
+  width: 18rem;
+}
