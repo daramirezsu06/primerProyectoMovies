@@ -5404,3 +5404,5 @@
     ce
   );
 });
+
+module.exports = { $ };
