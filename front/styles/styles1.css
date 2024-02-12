@@ -1,13 +1,28 @@
-footer article {
-  width: 50vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+li {
+  list-style: none;
 }
-footer img {
-  height: 2.5rem;
-  width: 2.5rem;
+
+.navbar {
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.5);
 }
-.moviescarts {
-  width: 18rem;
+.cardinfo {
+  height: 15.625rem;
+}
+.imgmovie {
+  height: 17.5rem;
+}
+.cardmovie {
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+.cardmovie :hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease;
+}
+.bg-light {
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0;
+}
+.bg-black{
+  background-color: black;
 }
