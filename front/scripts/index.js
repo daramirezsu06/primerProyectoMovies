@@ -1,8 +1,6 @@
-const { savemovie, movie } = require("./priclass");
+const renderhtml = require("./recorre");
 
-const renderMovies = require("./rendermovies");
-
-renderMovies();
+renderhtml();
 
 /*function renderMovies() {
   const arraymovies = tempData.map((pelicula) => addMovie(pelicula));
