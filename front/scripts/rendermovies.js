@@ -1,11 +1,8 @@
-
 const axios = require("axios");
 
 const renderMovies = async function () {
   try {
-    const promesa = await axios.get(
-      "https://students-api.2.us-1.fl0.io/movies"
-    );
+    const promesa = await axios.get("http://localhost:3000/movies");
     return promesa.data;
   } catch (error) {
     console.log(error);
@@ -13,7 +10,7 @@ const renderMovies = async function () {
 };
 
 //  $.get("https://students-api.2.us-1.fl0.io/movies", (movies, state) => {
-//    
+//
 
 //    movies.forEach((pelicula) => {
 //      const moviecart = addMovie(pelicula);

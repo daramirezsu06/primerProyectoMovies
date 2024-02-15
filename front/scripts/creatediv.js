@@ -9,7 +9,7 @@ function addMovie({
   poster,
 }) {
   const moviecart = document.createElement("div");
-  moviecart.classList.add("col-md-4"); // Agrega las clases de Bootstrap para el diseño responsivo
+  moviecart.classList.add("col-md-4", "mb-3"); // Agrega las clases de Bootstrap para el diseño responsivo
 
   moviecart.innerHTML = `
     <div id="${Id}" class="cardmovie">
