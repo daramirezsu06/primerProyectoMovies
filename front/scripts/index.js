@@ -2,8 +2,10 @@ const renderhtml = require("./recorre");
 const { addbutons } = require("./addmovie");
 const addpeli = document.getElementById("addpeli");
 
-window.addEventListener("DOMContentLoaded", renderhtml);
-addpeli.addEventListener("click", addbutons);
+window.addEventListener("DOMContentLoaded", () => {
+  renderhtml();
+  addbutons();
+});
 
 // const { addbutons } = require("./addmovie");
 // const cleanbottom = document.getElementById("clenform");

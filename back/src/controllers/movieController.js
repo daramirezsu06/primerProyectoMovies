@@ -21,7 +21,7 @@ const sendmoviecontroller = async (req, res) => {
       rate,
       poster,
     });
-    res.status(200).json(respuesta);
+    res.status(201).json("la pelicula se grabo correctamente");
   } catch (error) {
     res.status(500).json(error);
   }

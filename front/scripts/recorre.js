@@ -7,7 +7,7 @@ const renderhtml = async function () {
     const movies = await renderMovies();
     movies.forEach((pelicula) => {
       const moviecart = addMovie(pelicula);
-      principalContent.appendChild(moviecart);
+      principalContent?.appendChild(moviecart);
     });
   } catch (error) {
     console.log(error);

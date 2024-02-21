@@ -12,6 +12,33 @@ const {
   sendbottom,
 } = require("./constform");
 
+function validainpust({
+  title,
+  year,
+  director,
+  duration,
+  genre,
+  rate,
+  poster,
+}) {
+  if (
+    !title ||
+    !year ||
+    !director ||
+    !duration ||
+    !genre[0] ||
+    !rate ||
+    !poster
+  )
+    return "Todos los cambios son obligatorios";
+  if (director.length < 5 || director.length > 50)
+    return "Director debe contener entre 5 y 50 caracteres";
+  if (isNaN(rate) || rate < 1 || rate > 10)
+    return "El rating debe ser un n{umero entre 1 y 10";
+  if (!poster.includes("https://")) return "El poster debe ser una URL válida";
+  return null;
+}
+
 const sendmovie = async () => {
   try {
     const title = movietitle.value;
@@ -21,19 +48,8 @@ const sendmovie = async () => {
     const genre = generemovie.value.split(",");
     const rate = ratemovie.value;
     const poster = urlposter.value;
-    if (
-      !title ||
-      !year ||
-      !director ||
-      !duration ||
-      !genre ||
-      !rate ||
-      !poster
-    ) {
-      alert("todos los campos se deben diligenciar");
-      return;
-    }
-    const promesa = await axios.post("http://localhost:3000/movies", {
+
+    const movie = {
       title,
       year,
       director,
@@ -41,16 +57,12 @@ const sendmovie = async () => {
       genre,
       rate,
       poster,
-    });
-    console.log({
-      title,
-      year,
-      director,
-      duration,
-      genre,
-      rate,
-      poster,
-    });
+    };
+    const error1 = validainpust(movie);
+    if (error1) return alert(error1);
+
+    const promesa = await axios.post("http://localhost:3000/movies", movie);
+    console.log(movie);
     console.log(promesa);
   } catch (error) {
     console.log(error);
@@ -58,8 +70,13 @@ const sendmovie = async () => {
 };
 
 function addbutons() {
-  cleanbottom.addEventListener("click", cleanform);
-  sendbottom.addEventListener("click", sendmovie);
+  cleanbottom?.addEventListener("click", cleanform);
+  sendbottom?.addEventListener("click", sendmovie);
 }
 
 module.exports = { addbutons };
+
+// if (!title || !year || !director || !duration || !genre || !rate || !poster) {
+//   alert("todos los campos se deben diligenciar");
+//   return;
+// }
