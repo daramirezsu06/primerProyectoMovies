@@ -1,5 +1,5 @@
 function addMovie({
-  Id,
+  _id,
   title,
   year,
   director,
@@ -7,12 +7,13 @@ function addMovie({
   genre = [],
   rate,
   poster,
+  __v,
 }) {
   const moviecart = document.createElement("div");
   moviecart.classList.add("col-md-4", "mb-3"); // Agrega las clases de Bootstrap para el diseño responsivo
 
   moviecart.innerHTML = `
-    <div id="${Id}" class="cardmovie">
+    <div id="${_id}" class="cardmovie">
     <div class="card bg-white p-4 border  ">
       <img class="imgmovie card-img-top mx-auto" src="${poster}" alt="Card image cap">
       <div class="cardinfo d-flex flex-column justify-content-between">
@@ -20,7 +21,7 @@ function addMovie({
         <p>Año ${year} | Director: ${director} | ${duration} | ${rate} (Puntuación de la película) | ${genre.join(
     ", "
   )} </p>
-        <p class="card-text"><small class="text-muted">Todo público</small></p>
+        <p class="card-text"><small class="text-muted">Todo público ${__v}</small></p>
       </div>
     </div>
       

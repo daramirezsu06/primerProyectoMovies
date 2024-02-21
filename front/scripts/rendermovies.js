@@ -3,6 +3,7 @@ const axios = require("axios");
 const renderMovies = async function () {
   try {
     const promesa = await axios.get("http://localhost:3000/movies");
+    console.log(promesa.data);
     return promesa.data;
   } catch (error) {
     console.log(error);
