@@ -1,5 +1,7 @@
+// importo Axios para realizar solicitudes HTTP
 const axios = require("axios");
 
+// Función para pedirle las peliculas al servidor
 const renderMovies = async function () {
   try {
     const promesa = await axios.get("http://localhost:3000/movies");
@@ -9,16 +11,5 @@ const renderMovies = async function () {
     console.log(error);
   }
 };
-
-//  $.get("https://students-api.2.us-1.fl0.io/movies", (movies, state) => {
-//
-
-//    movies.forEach((pelicula) => {
-//      const moviecart = addMovie(pelicula);
-//      principalContent.appendChild(moviecart);
-//    });
-
-//    console.log(state);
-//  });
 
 module.exports = renderMovies;

@@ -1,7 +1,8 @@
+// importo la función para renderizar las películas y la función para agregar eventos a los botones del formulario
 const renderhtml = require("./recorre");
 const { addbutons } = require("./addmovie");
-const addpeli = document.getElementById("addpeli");
 
+// Espero a que el contenido del DOM se carge para ejecutar las funciones de renderizado de peliculas y de agregar eventos a los botones
 window.addEventListener("DOMContentLoaded", () => {
   renderhtml();
   addbutons();

@@ -1,5 +1,6 @@
+// Importa Mongoose para definir el esquema
 const mongoose = require("mongoose");
-
+// el esquema de película usando el constructor Schema de Mongoose
 const schemamovie = new mongoose.Schema({
   title: {
     type: String,
@@ -29,6 +30,8 @@ const schemamovie = new mongoose.Schema({
   poster: String,
 });
 
+
+// Crea el modelo de película basado en el esquema y lo asigna a la colección "movies" (mongo entiende que "movie" es el modelo para cada documento y asume que la coleccion es el plural "movies")
 const Movie = mongoose.model("movie", schemamovie);
 
 module.exports = Movie;

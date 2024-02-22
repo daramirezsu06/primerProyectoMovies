@@ -1,5 +1,7 @@
+// Importa el objeto que contiene los servicios getMovies y sendmovie 
 const moviesServices = require("../services/moviesServices");
 
+// Controlador para obtener todas las películas
 const moviecontroller = async (req, res) => {
   try {
     const respuesta = await moviesServices.getMovies();
@@ -8,7 +10,7 @@ const moviecontroller = async (req, res) => {
     res.status(500).json(error);
   }
 };
-
+// Controlador para enviar una película al DB
 const sendmoviecontroller = async (req, res) => {
   try {
     const { title, year, director, duration, genre, rate, poster } = req.body;

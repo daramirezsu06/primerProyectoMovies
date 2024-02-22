@@ -1,3 +1,4 @@
+// Función para crear un elemento HTML que representa una película
 function addMovie({
   _id,
   title,
@@ -9,9 +10,10 @@ function addMovie({
   poster,
   __v,
 }) {
+  // Crea un nuevo elemento div para la película y Agrega clases de Bootstrap
   const moviecart = document.createElement("div");
-  moviecart.classList.add("col-md-4", "mb-3"); // Agrega las clases de Bootstrap para el diseño responsivo
-
+  moviecart.classList.add("col-md-4", "mb-3");
+  // Inserta el contenido HTML utilizando teplate literals
   moviecart.innerHTML = `
     <div id="${_id}" class="cardmovie">
     <div class="card bg-white p-4 border  ">
@@ -27,7 +29,7 @@ function addMovie({
       
     </div>
     `;
-
+  // Retorna el elemento HTML que representa la película
   return moviecart;
 }
 

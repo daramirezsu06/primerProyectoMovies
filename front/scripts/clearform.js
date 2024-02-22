@@ -1,3 +1,4 @@
+// Importo las referencias a los inputs y botones del formulario
 const {
   movietitle,
   movieyear,
@@ -10,6 +11,7 @@ const {
   sendbottom,
 } = require("./constform");
 
+// Función para limpiar los campos del formulario
 const cleanform = () => {
   movietitle.value = "";
   movieyear.value = "";
