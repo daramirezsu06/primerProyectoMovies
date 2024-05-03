@@ -24,6 +24,8 @@ function addMovie({
     ", "
   )} </p>
         <p class="card-text"><small class="text-muted">Todo público ${__v}</small></p>
+        <button class="btn btn-primary btn-block">Eliminar pelicula</button>
+
       </div>
     </div>
       
